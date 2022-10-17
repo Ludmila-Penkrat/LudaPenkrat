@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.Globalization;
 using System.Text;
 
 new Homework().Task_1();
@@ -10,6 +11,15 @@ new Homework().Task_5();
 new Homework().Task_6();
 new Homework().Task_7();
 new Homework().Task_additional();
+
+new Homework_2().Task_1();
+new Homework_2().Task_2();
+new Homework_2().Task_3();
+new Homework_2().Task_4();
+new Homework_2().Task_5();
+new Homework_2().Task_6();
+new Homework_2().Task_7();
+new Homework_2().Task_8();
 
 class Homework
 
@@ -109,5 +119,180 @@ class Homework
 
         Console.WriteLine(sb.ToString());
 
+    }
+}
+
+class Homework_2
+ {
+IFormatProvider formatter = new NumberFormatInfo
+{
+    NumberDecimalSeparator = ".",
+};
+    public void Task_1()
+    {
+
+        short counter;
+        int number;
+        double variable;
+        char symbol;
+
+        Console.WriteLine("Enter integer to 255: ");
+        string? str1 = Console.ReadLine();
+
+        Console.WriteLine("Enter any integer :");
+        string? str2 = Console.ReadLine();
+
+        Console.WriteLine("Enter any decimal with dot :");
+        string? str3 = Console.ReadLine();
+
+        Console.WriteLine("Enter any character :");
+        string? str4 = Console.ReadLine();
+
+        counter = Convert.ToInt16(str1);
+        number = Convert.ToInt32(str2);
+        variable = Convert.ToDouble(str3, formatter);
+        symbol = Convert.ToChar(str4);
+
+        Console.WriteLine($"Counter = {counter}, Number = {number}, Variable = {variable}, Symbol = {symbol}");
+
+    }
+    public void Task_2()
+    {
+        Console.WriteLine("Enter integer a = : ");
+        int a = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter decimal with comma d = : ");
+        decimal d = decimal.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter decimal with dot d = : ");
+        decimal difD = decimal.Parse(Console.ReadLine(), formatter);
+
+        Console.WriteLine("Integer a = {0}, decimal d = {1}, decimal difD = {2}", a, d, difD);
+    }
+    public void Task_3()
+    {
+        Console.WriteLine("Enter any value: ");
+        string? line = Console.ReadLine();
+
+        bool result = int.TryParse(line, out var numberNew);
+        if (result)
+        {
+            Console.WriteLine("You enter integer = {0}", numberNew);
+        }
+        else
+        {
+            Console.WriteLine("You input is not correct and there isn't a number.");
+        }
+    }
+    public void Task_4()
+    {
+        var x = 117;
+        var y = x + 3;
+        var sum = x + y;
+        Console.WriteLine($"\nResult of addition = {sum}");
+
+    }
+    public void Task_5()
+    {
+        var discount = 15;
+        int roundValue = 2;
+
+        var books = 11;
+        var pansils = 23;
+        var notes = 25;
+        var types = 103;
+        var scissors = 17;
+
+        decimal priceBook = 10.5M;
+        decimal pricePansil = 0.25M;
+        decimal priceNote = 2M;
+        decimal priceType = 1.75M;
+        decimal priceScossor = 3.45M;
+
+
+        decimal total = (books * priceBook) + (pansils * pricePansil) + (notes * priceNote) + (types * priceType) + (scissors * priceScossor);
+
+        decimal sumDiscount = decimal.Round(((total * discount) / 100), roundValue, MidpointRounding.AwayFromZero);
+
+        decimal sumWithDiscount = total - sumDiscount;
+
+        Console.WriteLine($"Your shopping receipt is {total}. \nYour {discount}% discount is {sumDiscount}. \nYour total amount to pay is {sumWithDiscount}.\n");
+    }
+    public void Task_6()
+    {
+        double i = 15;
+        double k = 11;
+
+        double result1 = (i * k--) / (k * --i);
+        /* 1) 15 * 11 =165; k=10
+           2) i = 14; 10 * 14 = 140;
+           3) 165/140 = 1.1785714286
+        */
+        Console.WriteLine(result1);
+
+        int c = 5;
+        int l = 3;
+
+        int result2 = (--c * (l + c) / c++) % 2;
+        /*
+         1) --c = 4
+         2) l+c = 3 + 4 = 7
+         3) --c * (l+c) = 28
+         4) 28 / c++ = 28 / 4 = 7, c=5
+         5) 7 / 2 = 3, 7 - 6 = остаток = 1
+         */
+        Console.WriteLine(result2);
+    }
+    public void Task_7()
+    {
+        int d = 5;
+        int f = 5;
+        int g = 5;
+
+        // Result is always true
+        Console.WriteLine((d == f) ? "Result is true" : "Result is false");
+        Console.WriteLine((d <= f) ? "Result is true" : "Result is false");
+        Console.WriteLine((d != g+1) ? "Result is true" : "Result is false");
+        Console.WriteLine((d == g && f == g) ? "Result is true" : "Result is false");
+        Console.WriteLine((d == g || f == g) ? "Result is true" : "Result is false");
+        Console.WriteLine((--d <= f) ? "Result is true" : "Result is false");
+        Console.WriteLine((d < f && d < g) ? "Result is true" : "Result is false");
+        Console.WriteLine((d+10 > f || d+10 < g) ? "Result is true" : "Result is false");
+
+        Console.WriteLine();
+
+        // Result is always false
+        Console.WriteLine((g != f) ? "Result is true" : "Result is false");
+        Console.WriteLine((d > f) ? "Result is true" : "Result is false");
+        Console.WriteLine((d == g + 1) ? "Result is true" : "Result is false");
+        Console.WriteLine((++d != g && f == g) ? "Result is true" : "Result is false");
+        Console.WriteLine((d != g || f != g) ? "Result is true" : "Result is false");
+        Console.WriteLine((d < f) ? "Result is true" : "Result is false");
+        Console.WriteLine((d < f && d < g) ? "Result is true" : "Result is false");
+        Console.WriteLine((d + 10 < f || d + 10 < g) ? "Result is true" : "Result is false");
+
+    }
+    public void Task_8()
+    {
+        int box = 70;
+        object ob = box;
+        int unbox = (int)ob; // in the new variable
+        box = (int)ob; // in the same variable
+    }
+    public void Task_9()
+    {
+        // explicit cast
+        int s = 120;
+        short s1 = (short)s;
+
+        double s6 = 25.222;
+        decimal s7 = (decimal)s6;
+
+        // implicit cast
+        int s2 = 1222;
+        long s3 = s2;
+
+        float s4 = 2.02f;
+        double s5 = s4;
     }
 }
