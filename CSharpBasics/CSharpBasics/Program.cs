@@ -123,11 +123,11 @@ class Homework
 }
 
 class Homework_2
- {
-IFormatProvider formatter = new NumberFormatInfo
-{
-    NumberDecimalSeparator = ".",
-};
+    {
+        IFormatProvider formatter = new NumberFormatInfo
+        {
+            NumberDecimalSeparator = ".",
+        };
     public void Task_1()
     {
 
@@ -250,26 +250,26 @@ IFormatProvider formatter = new NumberFormatInfo
         int g = 5;
 
         // Result is always true
-        Console.WriteLine((d == f) ? "Result is true" : "Result is false");
-        Console.WriteLine((d <= f) ? "Result is true" : "Result is false");
-        Console.WriteLine((d != g+1) ? "Result is true" : "Result is false");
-        Console.WriteLine((d == g && f == g) ? "Result is true" : "Result is false");
-        Console.WriteLine((d == g || f == g) ? "Result is true" : "Result is false");
-        Console.WriteLine((--d <= f) ? "Result is true" : "Result is false");
-        Console.WriteLine((d < f && d < g) ? "Result is true" : "Result is false");
-        Console.WriteLine((d+10 > f || d+10 < g) ? "Result is true" : "Result is false");
+        Console.WriteLine($"Result is true: {(d == f)}");
+        Console.WriteLine($"Result is true: {(d <= f)}");
+        Console.WriteLine($"Result is true: {(d != g + 1)}");
+        Console.WriteLine($"Result is true: {(d == g && f == g)}");
+        Console.WriteLine($"Result is true: {(d == g || f == g)}");
+        Console.WriteLine($"Result is true: {(--d <= f)}");
+        Console.WriteLine($"Result is true: {(d < f && d < g)}");
+        Console.WriteLine($"Result is true: {(d+10 > f || d+10 < g)}");
 
         Console.WriteLine();
 
         // Result is always false
-        Console.WriteLine((g != f) ? "Result is true" : "Result is false");
-        Console.WriteLine((d > f) ? "Result is true" : "Result is false");
-        Console.WriteLine((d == g + 1) ? "Result is true" : "Result is false");
-        Console.WriteLine((++d != g && f == g) ? "Result is true" : "Result is false");
-        Console.WriteLine((d != g || f != g) ? "Result is true" : "Result is false");
-        Console.WriteLine((d < f) ? "Result is true" : "Result is false");
-        Console.WriteLine((d < f && d < g) ? "Result is true" : "Result is false");
-        Console.WriteLine((d + 10 < f || d + 10 < g) ? "Result is true" : "Result is false");
+        Console.WriteLine($"Result is false: {(g != f)}");
+        Console.WriteLine($"Result is false: {(d > f)}");
+        Console.WriteLine($"Result is false: {(d == g + 1)}");
+        Console.WriteLine($"Result is false: {(++d != g && f == g)}");
+        Console.WriteLine($"Result is false: {(d != g || f != g)}");
+        Console.WriteLine($"Result is false: {(d < f)}");
+        Console.WriteLine($"Result is false: {(d < f && d < g)}");
+        Console.WriteLine($"Result is false: {(d + 10 < f || d + 10 < g)}");
 
     }
     public void Task_8()
