@@ -62,7 +62,8 @@ class Homework3
     }
     public void Task_2()
     {
-        while (true)
+        bool saveCount = true;
+        while (saveCount)
         {
             try
             {
@@ -95,7 +96,8 @@ class Homework3
             catch (Exception)
             {
                 Console.WriteLine("You entered not number");
-                break;
+                saveCount = false;
+                //break;
             }
         }
     }
