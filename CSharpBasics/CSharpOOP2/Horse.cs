@@ -19,7 +19,7 @@ namespace CSharpOOP2
         public int DaysNumberLastVaccination;
         public int NumbersOfWins = 5;
         public int _speed;
-        public bool _isReadyToCompetition;
+        private bool _isReadyToCompetition;
 
         public static string _kind = "Horse";
 
