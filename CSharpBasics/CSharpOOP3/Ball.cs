@@ -15,7 +15,7 @@ namespace CSharpOOP3
             _radius = radius;
         }
 
-        public override double GetValue()
+        public override double GetVolume()
         {
             double ballVolume = Math.Round(((4 * Math.PI * Math.Pow(_radius, 3)) / 3), 2, MidpointRounding.AwayFromZero);
             return ballVolume;
@@ -23,7 +23,7 @@ namespace CSharpOOP3
 
         public override void ShapeInfo()
         {
-            Console.WriteLine($"This shape {GetType().Name} with name {Name} has raduis {_radius} cm and volume = {GetValue()} cm3.\n");
+            Console.WriteLine($"This shape {GetType().Name} with name {Name} has raduis {_radius} cm and volume = {GetVolume()} cm3.\n");
         }
     }
 }

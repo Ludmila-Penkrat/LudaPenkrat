@@ -17,7 +17,7 @@ namespace CSharpOOP3
             _baseArea = baseArea;
         }
 
-        public override double GetValue() 
+        public override double GetVolume() 
         {
             double piramidArea = Math.Round(((_height * _baseArea) / 3), 2, MidpointRounding.AwayFromZero);
             return piramidArea; 
@@ -25,7 +25,7 @@ namespace CSharpOOP3
         
         public override void ShapeInfo()
         {
-            Console.WriteLine($"This shape {GetType().Name} with name {Name} has height {_height} m, piramid base area {_baseArea} m2 and volume = {GetValue()} m3.\n");
+            Console.WriteLine($"This shape {GetType().Name} with name {Name} has height {_height} m, piramid base area {_baseArea} m2 and volume = {GetVolume()} m3.\n");
         }
     }
 }

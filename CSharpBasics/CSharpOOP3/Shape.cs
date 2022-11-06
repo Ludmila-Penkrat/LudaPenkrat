@@ -21,7 +21,7 @@ namespace CSharpOOP3
             set { _name = value; }
         }
 
-        public abstract double GetValue();
+        public abstract double GetVolume();
 
         public virtual void ShapeInfo()
         {
