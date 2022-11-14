@@ -167,14 +167,14 @@ Console.Write(string.Join(", ", sortNameQuery));
 
 // create collection of objects from list of NickNames
 var newQueryHorse = from objectHorse in sortNameQuery
-                    select new Horse 
+                    select new Horse
                     {
                         NickName = objectHorse,
                         Color = "Blue",
                         Age = 2
                     };
 foreach (var item in newQueryHorse)
-Console.WriteLine($"{item.NickName} - {item.Color} - {item.Age}");
+    Console.WriteLine($"{item.NickName} - {item.Color} - {item.Age}");
 
 // create collection from list of object
 var newHorsesCollection = horses.Select(h => new Horse
