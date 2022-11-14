@@ -2,10 +2,10 @@
 {
     public class LinqHelper
     {
+        Random random = new Random();
+
         char[] SPLITERATOR = new[] { ' ', '.', ',', '\n', '\t', '\r', '\v'};
         public const string DELIMETER = ", ";
-
-        Random random = new Random();
 
         public int GetCollectionSize()
         {
@@ -23,7 +23,7 @@
             return list;
         }
 
-        public List<string> CreateCollection(string line)
+        public List<string> CreateCollectionFromSentence(string line)
         {
             string[] newLine = line.Split(SPLITERATOR.ToArray(), StringSplitOptions.RemoveEmptyEntries);
             List<string> list = new List<string>();
@@ -34,7 +34,18 @@
             return list;
         }
 
-          public void PrintCollection(List<int> list)
+        public List<string> CreateCollection(string line)
+        {
+            string[] newLine = line.Split(DELIMETER);
+            List<string> list = new List<string>();
+            for (int i = 0; i < newLine.Length; i++)
+            {
+                list.Add(newLine[i]);
+            }
+            return list;
+        }
+
+        public void PrintCollection(List<int> list)
         {
             Console.Write(string.Join(DELIMETER, list));
             Console.WriteLine();

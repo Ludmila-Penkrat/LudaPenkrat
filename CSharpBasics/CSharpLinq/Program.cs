@@ -40,14 +40,14 @@ linqHelper.PrintCollection(filterRandomList);
 
 #region Task_3
 
-Console.Write("\nEnter names or animals or books by comma in one line (ex. Crocodile, Cats, cat, Giraff, Lion, Elephan, turtle, tropical fish): ");
+Console.Write("\nEnter names or animals or books by comma in one line (ex. Crocodile, Cats, cat, Giraff, Lion, Elephan, turtle, gelly fish): ");
 
 var stringCollection = linqHelper.CreateCollection(Console.ReadLine());
 
 linqHelper.PrintCollection(stringCollection);
 
 var filteredCollection = from name in stringCollection
-                         where name.ToUpper().Length % 2 == 0
+                         where name.Length % 2 == 0
                          orderby name
                          select name;
 
@@ -58,13 +58,16 @@ Console.WriteLine();
 
 #region Task_4
 
-Console.Write("\nEnter cities by comma in one line (ex. Minsk, Berlin, Praha, Riga, Amsterdam, Ulm, Pusda): ");
+var startChar = 'p';
+var lastChar = 'a';
+
+Console.Write("\nEnter cities by comma in one line (ex. Minsk, Berlin, Praha, Riga, Amsterdam, New York, Ulm, Pusda): ");
 
 var stringCitisCollection = linqHelper.CreateCollection(Console.ReadLine());
 
 linqHelper.PrintCollection(stringCitisCollection);
 
-var filteredCitiesCollection = stringCitisCollection.Where(x => x.ToLower().StartsWith('p') && x.ToLower().EndsWith('a')).ToList();
+var filteredCitiesCollection = stringCitisCollection.Where(x => x.ToLower().StartsWith(startChar) && x.ToLower().EndsWith(lastChar)).ToList();
 
 linqHelper.PrintCollection(filteredCitiesCollection);
 
@@ -74,13 +77,17 @@ linqHelper.PrintCollection(filteredCitiesCollection);
 
 Console.Write("\nEnter any line (ex.Join the large, engaged community of Developers around The globe who build with .NET. Share, showcase, and solve together. Stay connected.): ");
 
-var stringLineCollection = linqHelper.CreateCollection(Console.ReadLine());
+var stringLineCollection = linqHelper.CreateCollectionFromSentence(Console.ReadLine());
 
 linqHelper.PrintCollection(stringLineCollection);
 
-var filterStringLine = stringLineCollection.Where(x => x == x.ToLower()).ToList();
+var filterStringLine = stringLineCollection.Where(x => x == x.ToLower()).ToList(); // слова написанные строчными буквами
 
 linqHelper.PrintCollection(filterStringLine);
+
+var filterStringLineSecondVersion = stringLineCollection.Where(x => x.Equals(x.ToUpper())).ToList(); // слова написанные прописными буквами
+
+linqHelper.PrintCollection(filterStringLineSecondVersion);
 
 #endregion
 
@@ -127,19 +134,27 @@ linesCollection.Add("What makes you feel happy?");
 linesCollection.Add("Look at the cartoon.");
 linesCollection.Add("Look");
 
-linqHelper.PrintCollection(linesCollection);
+//linqHelper.PrintCollection(linesCollection);
 
-var filteredByLengthCollection = linesCollection.Where(x => x.Length > 5).ToList();
+//var filteredByLengthCollection = linesCollection.Where(x => x.Length > 5).ToList();
 
-var firstLastCollectoinItems = new[] { filteredByLengthCollection.FirstOrDefault(), filteredByLengthCollection.LastOrDefault() }.Where(x => x != null);
+//var firstLastCollectoinItems = new[] { filteredByLengthCollection.FirstOrDefault(), filteredByLengthCollection.LastOrDefault() }.Where(x => x != null);
 
-var firstLastItems = new[] { filteredByLengthCollection.ElementAtOrDefault(0), filteredByLengthCollection.ElementAtOrDefault(^1) }.Where(x => x != null);
+//var firstLastItems = new[] { filteredByLengthCollection.ElementAtOrDefault(0), filteredByLengthCollection.ElementAtOrDefault(^1) }.Where(x => x != null);
 
-Console.Write(string.Join(", ", firstLastCollectoinItems));
+//Console.Write(string.Join(", ", firstLastCollectoinItems));
 
-Console.WriteLine();
+//Console.WriteLine();
 
-Console.Write(string.Join(", ", firstLastItems));
+//Console.Write(string.Join(", ", firstLastItems));
+
+if(linesCollection.Sum(x => x.Length) > 5)
+{
+    Console.WriteLine($"The first element \"{linesCollection.FirstOrDefault()}\" and the last element \"{linesCollection.LastOrDefault()}\"");
+}else
+{
+Console.WriteLine("The collection length is less then 5");
+}
 
 #endregion
 
