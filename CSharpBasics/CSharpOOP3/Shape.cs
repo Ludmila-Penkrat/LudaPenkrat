@@ -12,7 +12,7 @@ namespace CSharpOOP3
 
         public Shape(string name)
         {
-            Name = name;
+            _name = name;
         }
 
         public string Name
