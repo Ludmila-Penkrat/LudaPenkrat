@@ -41,13 +41,13 @@ do
         IsCorrectValue = true;
         Console.WriteLine(ex.Message);
     }
-}while (IsCorrectValue && count<4);
+}while (IsCorrectValue && count < 4);
 
 try
 {
     if (triangle.IsLengthTriangleSide(firstSide, secondSide, thirdSide))
     {
-        double result = triangle.triangleSquare(firstSide, secondSide, thirdSide);
+        double result = triangle.TriangleSquare(firstSide, secondSide, thirdSide);
         Console.WriteLine($"Triangle area is {result}");
     }
 } 

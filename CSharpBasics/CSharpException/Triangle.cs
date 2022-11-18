@@ -49,7 +49,7 @@ namespace CSharpException
             }
         }
 
-        public double triangleSquare(double oneSide, double twoSide, double threeSide)
+        public double TriangleSquare(double oneSide, double twoSide, double threeSide)
         {
             double triangleHalfPerimeter = (oneSide + threeSide + threeSide) / 2;
             double triangleSquare = Math.Sqrt(triangleHalfPerimeter * (triangleHalfPerimeter - oneSide) * (triangleHalfPerimeter - twoSide) * (triangleHalfPerimeter - threeSide));
