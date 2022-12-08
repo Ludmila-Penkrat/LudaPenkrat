@@ -151,7 +151,8 @@ linesCollection.Add("Look");
 if(linesCollection.Sum(x => x.Length) > 5)
 {
     Console.WriteLine($"The first element \"{linesCollection.FirstOrDefault()}\" and the last element \"{linesCollection.LastOrDefault()}\"");
-}else
+}
+else
 {
 Console.WriteLine("The collection length is less then 5");
 }
