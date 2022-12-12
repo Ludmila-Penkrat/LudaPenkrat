@@ -12,7 +12,7 @@ namespace CalculationMSTestTests
         [DataRow(2.5, 2.5, 6.25)]
         [DataRow(0, 7.55, 0)]
         [DataRow(-25, 10, -250)]
-        public void Multiply_CorrectInputTest(double firstNumber, double secondNumber, double expectedresult)
+        public void MultiplyCorrectInputTest(double firstNumber, double secondNumber, double expectedresult)
         {
             var actualResult = calculator.Multiply(firstNumber, secondNumber);
 

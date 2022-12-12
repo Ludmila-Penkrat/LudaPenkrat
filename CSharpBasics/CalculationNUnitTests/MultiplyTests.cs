@@ -23,11 +23,12 @@ namespace CalculationNUnitTests
         [TestCase(2.5, 2.5, 6.25)]
         [TestCase(0, 7.55, 0)]
         [TestCase(-25, 10, -250)]
-        public void Multiply_WithCorrectInputTest(double firstNumber, double secondNumber, double expectedresult)
+        [TestCase(0, 0, 0)]
+        public void MultiplyWithCorrectInputTest(double firstNumber, double secondNumber, double expectedresult)
         {
             var actualResult = calculator.Multiply(firstNumber, secondNumber);
 
-            Assert.AreEqual(expectedresult, actualResult, $"Multiply action: Expected result {expectedresult} isn't equal {actualResult}");
+            Assert.That(actualResult, Is.EqualTo(expectedresult), $"Multiply action: Expected result {expectedresult} isn't equal {actualResult}");
         }
     }
 }

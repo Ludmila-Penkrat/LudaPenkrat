@@ -8,7 +8,7 @@ namespace CalculationNUnitTests
         Calculator calculator = new Calculator();
 
         [Test]
-        public void Add_WithCorrectInputTest()
+        public void AddWithCorrectInputTest()
         {
             var firstNumber = 20d;
             var secondNumber = 10d;
@@ -16,7 +16,7 @@ namespace CalculationNUnitTests
 
             var actualresult = calculator.Add(firstNumber, secondNumber);
 
-            Assert.AreEqual(expectedresult, actualresult, $"Add action: Expected result {expectedresult} isn't equal {actualresult}");
+            Assert.That(actualresult, Is.EqualTo(expectedresult), $"Add action: Expected result {expectedresult} isn't equal {actualresult}");
         }
     }
 }

@@ -6,13 +6,12 @@ namespace CalculationMSTestTests
     public class IsPositiveNumberTests
     {
         Calculator calculator = new Calculator();
-        public const string WrongInput = "Wrong input";
 
         [DataTestMethod]
         [DataRow(125)]
         [DataRow(0.17)]
         [DataRow("20")]
-        public void IsPositive_PositiveInputTest(object input)
+        public void IsPositivePositiveInputTest(object input)
         {
             var actualResult = calculator.isPositive(input);
 
@@ -24,7 +23,7 @@ namespace CalculationMSTestTests
         [DataRow(-24)]
         [DataRow(-27.25)]
         [DataRow("-24,20")]
-        public void IsPositive_NegativeInputTest(object input)
+        public void IsPositiveNegativeInputTest(object input)
         {
             var actualResult = calculator.isPositive(input);
 
@@ -34,12 +33,11 @@ namespace CalculationMSTestTests
         [DataTestMethod]
         [DataRow("twenty")]
         [DataRow("-24.25")]
+        [DataRow(" ")]
         [ExpectedException(typeof(NotFiniteNumberException))]
-        public void IsPositive_StringInput_ExeptionTest(object input)
+        public void IsPositiveStringInput_ExeptionTest(object input)
         {
             var actualResult = calculator.isPositive(input);
-
-            Assert.ThrowsException<NotFiniteNumberException>(() => actualResult, $"{WrongInput}. Input {input} cannot convert to double");
         }
     }
 }

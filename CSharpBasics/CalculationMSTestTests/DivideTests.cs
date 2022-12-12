@@ -8,10 +8,9 @@ namespace CalculationMSTestTests
     public class DivideTests
     {
         Calculator calculator = new Calculator();
-        public const string WrongInput = "Wrong input";
 
         [TestMethod]
-        public void Divide_WithCorrectInputTest()
+        public void DivideWithCorrectInputTest()
         {
             var firstNumber = 20.5;
             var secondNumber = 10.2;
@@ -23,7 +22,7 @@ namespace CalculationMSTestTests
         }
 
         [TestMethod]
-        public void Divide_PositiveInputByZeroTest()
+        public void DividePositiveInputByZeroTest()
         {
             var firstNumber = 20.5;
             var secondNumber = 0;
@@ -34,7 +33,7 @@ namespace CalculationMSTestTests
         }
 
         [TestMethod]
-        public void Divide_NegativeInputByZeroTest()
+        public void DivideNegativeInputByZeroTest()
         {
             var firstNumber = -100;
             var secondNumber = 0;
@@ -45,7 +44,7 @@ namespace CalculationMSTestTests
         }
 
         [TestMethod]
-        public void Divide_DoubleZeroByDoubleZeroTest()
+        public void DivideDoubleZeroByDoubleZeroTest()
         {
             var firstNumber = 0.0;
             var secondNumber = 0.0;

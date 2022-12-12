@@ -13,7 +13,7 @@ namespace CalculationNUnitTests
         [TestCase(125)]
         [TestCase(0.17)]
         [TestCase("20")]
-        public void IsPositive_PositiveInputTest(object input)
+        public void IsPositivePositiveInputTest(object input)
         {
             var actualResult = calculator.isPositive(input);
 
@@ -24,7 +24,7 @@ namespace CalculationNUnitTests
         [TestCase(-24)]
         [TestCase(-27.25)]
         [TestCase("-24,20")]
-        public void IsPositive_NegativeInputTest(object input)
+        public void IsPositiveNegativeInputTest(object input)
         {
             var actualResult = calculator.isPositive(input);
 
@@ -33,7 +33,8 @@ namespace CalculationNUnitTests
 
         [TestCase("twenty")]
         [TestCase("-24.25")]
-        public void IsPositive_StringInputTest(object input)
+        [TestCase(" ")]
+        public void IsPositiveStringInputTest(object input)
         {
             Assert.Throws(typeof(NotFiniteNumberException), () => calculator.isPositive(input), $"{WrongInput}. Input {input} cannot convert to double");
         }

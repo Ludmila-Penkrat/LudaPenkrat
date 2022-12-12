@@ -5,11 +5,10 @@ namespace CalculationMSTestTests
     [TestClass]
     public class AddTests
     {
-        public const string WrongInput = "Wrong input";
         Calculator calculator = new Calculator();
         
         [TestMethod]
-        public void Add_WithCorrectInputTest()
+        public void AddWithCorrectInputTest()
         {
             var firstNumber = 20d;
             var secondNumber = 10d;
@@ -22,13 +21,12 @@ namespace CalculationMSTestTests
 
         //[TestMethod]
         //[ExpectedException(typeof(InvalidCastException))]
-        //public void Add_WithWrongFormatInput_Exeption()
+        //public void AddWithWrongFormatInputExeption()
         //{
         //    var firstNumber = 20;
         //    var secondNumber = 10;
         //    var expectedresult = 30;
-
-        //    Assert.ThrowsException<InvalidCastException>(() => calculator.Add(firstNumber, secondNumber));
+        //    calculator.Add(firstNumber, secondNumber));
         //}
      }
 }

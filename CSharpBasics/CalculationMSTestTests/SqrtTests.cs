@@ -11,7 +11,7 @@ namespace CalculationMSTestTests
         [DataRow (25, 5)]
         [DataRow (6.25, 2.5)]
         [DataRow (1_000_000, 1_000)]
-        public void Sqrt_WithCorrectInputTest(object input, double expectedResult)
+        public void SqrtWithCorrectInputTest(object input, double expectedResult)
         {
 
             var actualResult = calculator.Sqrt(input);
@@ -20,7 +20,7 @@ namespace CalculationMSTestTests
         }
 
         [TestMethod]
-        public void Sqrt_WithNegativInput_WithoutExceptionTest()
+        public void SqrtWithNegativInputWithoutExceptionTest()
         {
             var firstNumber = -25;
             
@@ -32,7 +32,7 @@ namespace CalculationMSTestTests
         //This test is performed if such kind of exception would be handled in code
         //[TestMethod]
         //[ExpectedException(typeof(Exception))]
-        //public void Sqrt_WithNegativInput_ExceptionTest()
+        //public void SqrtWithNegativInputExceptionTest()
         //{
         //    var firstNumber = -25;
 

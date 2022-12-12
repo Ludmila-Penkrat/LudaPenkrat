@@ -10,7 +10,7 @@ namespace CalculationMSTestTests
 
 
         [TestMethod]
-        public void Substruction_WithCorrectInputTest()
+        public void SubstructionWithCorrectInputTest()
         {
             var firstNumber = 20;
             var secondNumber = 10;
@@ -22,7 +22,7 @@ namespace CalculationMSTestTests
         }
 
         [TestMethod]
-        public void Substruction_WithDoubleDataTest()
+        public void SubstructionWithDoubleDataTest()
         {
             var firstNumber = 1.4;
             var secondNumber = 1;
@@ -34,14 +34,22 @@ namespace CalculationMSTestTests
         }
 
         [TestMethod]
-        public void Substruction_WithStringDataTest()
+        [DataRow("twenty", "ten")]
+        [DataRow(" ", " ")]
+        [ExpectedException(typeof(NotFiniteNumberException))]
+        public void SubstructionWithStringDataTest(string firstValue, string secondValue)
+        {           
+            calculator.Sub(firstValue, secondValue);
+        }
+
+        [TestMethod]
+        [DataRow("twenty", "ten")]
+        [DataRow(" ", " ")]
+        public void SubstructionWithStringDataTest1(string firstValue, string secondValue)
         {
-            var firstNumber = "twenty";
-            var secondNumber = "ten";
-            
             try
             {
-                calculator.Sub(firstNumber, secondNumber);
+                calculator.Sub(firstValue, secondValue);
             }
             catch (NotFiniteNumberException ex)
             {

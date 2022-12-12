@@ -22,7 +22,7 @@ namespace CalculationNUnitTests
         }
 
         [Test]
-        public void Divide_WithCorrectInputTest()
+        public void DivideWithCorrectInputTest()
         {
             var firstNumber = 20.5;
             var secondNumber = 10.2;
@@ -34,7 +34,7 @@ namespace CalculationNUnitTests
         }
 
         [Test]
-        public void Divide_PositiveByZeroTest()
+        public void DividePositiveByZeroTest()
         {
             var firstNumber = 20.5;
             var secondNumber = 0;
@@ -45,7 +45,7 @@ namespace CalculationNUnitTests
         }
 
         [Test]
-        public void Divide_NegativeByZeroTest()
+        public void DivideNegativeByZeroTest()
         {
             var firstNumber = -100;
             var secondNumber = 0;
@@ -56,7 +56,7 @@ namespace CalculationNUnitTests
         }
 
         [Test]
-        public void Divide_DoubleZeroByDoubleZeroTest()
+        public void DivideDoubleZeroByDoubleZeroTest()
         {
             var firstNumber = 0.0;
             var secondNumber = 0.0;

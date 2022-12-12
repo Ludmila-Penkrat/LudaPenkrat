@@ -13,7 +13,7 @@ namespace CalculationNUnitTests
         [TestCase(-2.5)]
         [TestCase(0)]
         [TestCase("-125")]
-        public void IsNegative_NegativInputTest(object input)
+        public void IsNegativeNegativInputTest(object input)
         {
             bool actualResult = calculator.isNegative(input);
 
@@ -25,7 +25,7 @@ namespace CalculationNUnitTests
         [TestCase("111")]
         [TestCase("12,25")]
 
-        public void IsNegative_PositiveInputTest(object input)
+        public void IsNegativePositiveInputTest(object input)
         {
             bool actualResult = calculator.isNegative(input);
 
@@ -34,6 +34,7 @@ namespace CalculationNUnitTests
 
         [TestCase("minus ten")]
         [TestCase("-12.55")]
+        [TestCase(" ")]
         public void IsNegative_StringInputTest(object input)
         {
             Assert.Throws(typeof(NotFiniteNumberException), () => calculator.isNegative(input), $"{WrongInput}. Input {input} cannot convert to double");
