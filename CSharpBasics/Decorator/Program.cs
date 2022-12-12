@@ -28,3 +28,12 @@ var secondDecorator = new ExtraLoudGigantosaurusDecorator(new LoudGigantosarusDe
 Console.WriteLine(secondDecorator.Roar());
 
 secondDecorator.SetComponent(newDinosurusWithTwoDecorator);
+
+var result = Sqrt(6.25);
+Console.WriteLine(result);
+
+static double Sqrt(object a)
+{
+    var b = Convert.ToInt32(a);
+    return Math.Sqrt(b);
+}
