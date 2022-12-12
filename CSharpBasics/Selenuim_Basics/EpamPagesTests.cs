@@ -6,9 +6,9 @@ namespace Selenuim_Basics
     public class EpamPagesTests
     {
         private IWebDriver _webDriver;
-        public string MainLinkPage = "https://www.epam.com/";
-        public string WeDoItPageLink = "https://www.epam.com/how-we-do-it";
-        public string OurWorkPageLink = "https://www.epam.com/our-work";
+        private const string _weDoItPageLink = "https://www.epam.com/how-we-do-it";
+        private const string _ourWorkPageLink = "https://www.epam.com/our-work";
+        private const string _mainLinkPage = "https://www.epam.com/";
 
         [SetUp]
         public void Initialaze()
@@ -21,20 +21,20 @@ namespace Selenuim_Basics
         [Test]
         public void CheckCorrectPageIsOpened()
         {
-            _webDriver.Navigate().GoToUrl(MainLinkPage);
+            _webDriver.Navigate().GoToUrl(_mainLinkPage);
 
-            Assert.That(_webDriver.Url, Is.EqualTo(MainLinkPage), $"Expected result is {MainLinkPage} but actual result is {_webDriver.Url}");
+            Assert.That(_webDriver.Url, Is.EqualTo(_mainLinkPage), $"Expected result is {_mainLinkPage} but actual result is {_webDriver.Url}");
         }
 
         [Test]
         public void CheckWeDoItPageIsOpenedAfterMoveAndReload()
         {
-            _webDriver.Navigate().GoToUrl(WeDoItPageLink);
-            _webDriver.Navigate().GoToUrl(OurWorkPageLink);
+            _webDriver.Navigate().GoToUrl(_weDoItPageLink);
+            _webDriver.Navigate().GoToUrl(_ourWorkPageLink);
             _webDriver.Navigate().Refresh();
             _webDriver.Navigate().Back();
 
-            Assert.That(_webDriver.Url, Is.EqualTo(WeDoItPageLink), $"Expected result {MainLinkPage} is'n equal to actual result {_webDriver.Url}");
+            Assert.That(_webDriver.Url, Is.EqualTo(_weDoItPageLink), $"Expected result {_mainLinkPage} is'n equal to actual result {_webDriver.Url}");
         }
 
         [TearDown]
