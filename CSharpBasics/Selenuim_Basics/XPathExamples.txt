@@ -1,0 +1,13 @@
+﻿Task_ 5
+1. header-search__button header__icon (Search Lope) by class //*[@class = 'header-search__button header__icon']
+2. onetrust-consent-sdk by id - //*[@id = 'onetrust-consent-sdk']
+3. href = https://www.epam.com/ by link - //*[@class = 'location-selector__item']/a[@href='https://www.epam.com']
+4. name = vendor-search-handler by name - //*[@name = 'vendor-search-handler']
+5. tag nav by tag - //nav
+
+
+Task_6
+
+Contact Us button - //*[@class='cta-button-ui cta-button--envelope header__control']
+					//*[contains(@class, 'cta-button--envelope')]
+					//span[text() = 'CONTACT US'] - not good solution for global localization testing, bu good for english language
