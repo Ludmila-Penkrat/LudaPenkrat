@@ -1,6 +1,7 @@
 ﻿
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using System.Linq;
 
 namespace Selenuim_Basics
 {
@@ -36,17 +37,21 @@ namespace Selenuim_Basics
         {
             var expectedResult = new List<string> { "AMERICAS", "EMEA", "APAC" };
 
-
             var webElement = Driver.FindElement(By.XPath(_careersButtonXPath));
             webElement.Click();
 
-
             var webElementThreeCountries = Driver.FindElements(By.XPath(_tabsWithCountriesXPath));
+            var actualResult = webElementThreeCountries.Select(x => x.Text).ToList();
 
-            foreach (var item in webElementThreeCountries)
-            {
-                Assert.True(expectedResult.Contains(item.GetAttribute("innerText")));
-            }
+            // некорректная проверка, т.к. если в expectedResult я буду ожидать на одно или большеслов, то тест пройдет - ложно положительный тест
+            //foreach (var item in actualResult)
+            //{
+            //    Assert.True(expectedResult.Contains(item), $"Collection {string.Join(", ", expectedResult)} does not match with collection on site {string.Join(", ", actualResult)}.");
+            //}
+
+            CollectionAssert.AreEqual(expectedResult, actualResult, $"Collection {string.Join(", ", expectedResult)} does not match with collection on site {string.Join(", ", actualResult)}.");
+            //Assert.That(actualResult, Is.All.Contains(expectedResult), $"Collection {string.Join(", ", expectedResult)} does not match with collection on site {string.Join(", ", actualResult)}.");
+            Assert.That(actualResult, Is.EqualTo(expectedResult), $"Collection {string.Join(", ", expectedResult)} does not match with collection on site {string.Join(", ", actualResult)}.");
         }
 
         [TestCase(_wordToSearchIsAutomation)]
@@ -66,9 +71,12 @@ namespace Selenuim_Basics
             SearchByInputString(input);
 
             var fiveFirstItems = Driver.FindElements(By.XPath(_searchResultItemXPath)).Take(5);
-            foreach (var item in fiveFirstItems)
+            var actualResult = fiveFirstItems.Select(x => x.Text);
+
+            //Assert.That(actualResult, Is.All.Contains(input).IgnoreCase, $"{string.Join(",", actualResult)} doesn't contain {input}."); Дополнительное решение
+            foreach (var item in actualResult)
             {
-                Assert.That(item.GetAttribute("innerText").Contains(input, StringComparison.OrdinalIgnoreCase), Is.True, $"{item.GetAttribute("innerText")} doesn't contain {input}.");
+                Assert.That(item.Contains(input, StringComparison.OrdinalIgnoreCase), Is.True, $"{item} doesn't contain {input}.");
             }
         }
 
