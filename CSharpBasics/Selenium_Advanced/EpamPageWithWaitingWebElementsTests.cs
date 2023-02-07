@@ -53,7 +53,7 @@ namespace Selenium_Advanced
             Driver.FindElement(By.XPath(_chooseLanguageButtonMaimPageXPath)).Click();
             
             var allLanguagesInDropDown = Waiter.Until(Driver => Driver.FindElements(By.XPath(_listOfAllLanguagesInDropDownXPath)))
-                                        .Select(x => x.GetAttribute("innerText"));
+                                        .Select(x => x.Text);
          
             CollectionAssert.AreEqual(expectedListAllLanguages, allLanguagesInDropDown, $"Collection {string.Join(", ", expectedListAllLanguages)} does not match with collection on site {string.Join(", ", allLanguagesInDropDown)}.");
         }
