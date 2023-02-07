@@ -35,7 +35,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenuim_Basics", "Selenuim
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeleniumTest", "SeleniumTest\SeleniumTest.csproj", "{D31CC855-C8AB-4230-A22F-11430AFABBB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenium_Advanced", "Selenium_Advanced\Selenium_Advanced.csproj", "{05521D83-68F3-424C-911D-798187667692}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Selenium_Advanced", "Selenium_Advanced\Selenium_Advanced.csproj", "{05521D83-68F3-424C-911D-798187667692}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inharitance", "Inharitance\Inharitance.csproj", "{ED82ED4A-AA76-455B-BAC9-4F02BC87550F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalTest", "FinalTest\FinalTest.csproj", "{BD080E71-76C7-48C3-BB5E-C822A030A80D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +115,14 @@ Global
 		{05521D83-68F3-424C-911D-798187667692}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05521D83-68F3-424C-911D-798187667692}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05521D83-68F3-424C-911D-798187667692}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED82ED4A-AA76-455B-BAC9-4F02BC87550F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED82ED4A-AA76-455B-BAC9-4F02BC87550F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED82ED4A-AA76-455B-BAC9-4F02BC87550F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED82ED4A-AA76-455B-BAC9-4F02BC87550F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD080E71-76C7-48C3-BB5E-C822A030A80D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD080E71-76C7-48C3-BB5E-C822A030A80D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD080E71-76C7-48C3-BB5E-C822A030A80D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD080E71-76C7-48C3-BB5E-C822A030A80D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
